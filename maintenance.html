@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="de" class="no-js">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="color-scheme" content="light" />
+  <title>Wartungsarbeiten – Wir sind gleich zurück</title>
+  <meta name="description" content="Diese Website wird derzeit gewartet. Wir sind in Kürze wieder für Sie da." />
+  <link rel="icon" href="favicon.ico" />
+  <style>
+    /* ========= RESET & TOKENS ========= */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+                   Inter, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+      line-height: 1.5;
+      color: var(--fg);
+      background:
+        radial-gradient(1200px 800px at 80% -10%, hsl(220 80% 50% / 0.12), transparent 60%),
+        radial-gradient(900px 600px at 10% 110%, hsl(220 70% 35% / 0.12), transparent 55%),
+        linear-gradient(180deg, var(--bg), var(--bg-deep));
+      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+    }
+    :root {
+      --bg: hsl(0 0% 100%);
+      --bg-elev: hsl(0 0% 100% / 0.7);
+      --bg-deep: hsl(210 20% 98%);
+      --glass: hsl(0 0% 100% / 0.6);
+      --fg: hsl(220 20% 15%);
+      --muted: hsl(220 8% 45%);
+      --accent: hsl(220 90% 48%);   /* Blau */
+      --accent-2: hsl(230 80% 38%); /* Tiefblau */
+      --shadow: 0 10px 30px hsl(220 40% 20% / 0.10), 0 2px 8px hsl(220 40% 20% / 0.06);
+      --radius-lg: 18px; --radius-sm: 10px; --maxw: 1080px; --blur: saturate(140%) blur(12px);
+      --warn1: hsl(45 100% 64% / 0.25); --warn2: hsl(45 100% 52% / 0.20);
+      --border: hsl(0 0% 100% / 0.22);
+    }
+
+    /* ========= LAYOUT ========= */
+    .site-shell { min-height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
+    header {
+      position: relative; z-index: 2; max-width: var(--maxw);
+      margin: 0 auto; padding: 20px clamp(16px, 3vw, 28px);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+
+    .brand { display: inline-flex; align-items: center; text-decoration: none; }
+    .brand__logo {
+      width: 140px; height: 40px; object-fit: contain; display: block;
+    }
+
+    .top-links a {
+      color: var(--fg); text-decoration: none; font-weight: 500;
+      border: 1px solid hsl(0 0% 100% / 0.0); padding: 10px 14px; border-radius: 999px;
+      backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+      background: var(--glass); box-shadow: var(--shadow);
+      transition: transform .2s ease, background .2s ease, border-color .2s ease;
+    }
+    .top-links a:hover { transform: translateY(-1px); border-color: hsl(0 0% 100% / 0.15); }
+    .top-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    main { display: grid; place-items: center; padding: clamp(24px, 4vw, 48px); }
+    .card {
+      position: relative; max-width: 760px; width: 100%;
+      border-radius: var(--radius-lg); padding: clamp(28px, 5vw, 44px);
+      backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
+      background: linear-gradient(180deg, var(--bg-elev), transparent 70%) border-box,
+                  radial-gradient(650px 200px at 80% -20%, hsl(0 0% 100% / 0.35), transparent 70%) border-box;
+      border: 1px solid var(--border); box-shadow: var(--shadow);
+    }
+
+    .status-chip {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: .2px;
+      background: linear-gradient(180deg, var(--warn1), var(--warn2));
+      border: 1px solid hsl(45 100% 60% / 0.45);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    }
+    .status-dot {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: linear-gradient(180deg, #ffd86b, #f7b733);
+      box-shadow: 0 0 0 6px hsl(45 100% 50% / 0.15);
+    }
+    
+    h1 { margin: 14px 0 10px; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; letter-spacing: -0.02em; }
+    .lead { font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); margin-bottom: 22px; }
+
+    /* Fortschrittsbalken statisch */
+    .progress {
+      position: relative; width: 100%; height: 12px; border-radius: 999px; overflow: hidden;
+      background: linear-gradient(180deg, hsl(0 0% 100% / 0.35), hsl(0 0% 100% / 0.15));
+      border: 1px solid hsl(0 0% 100% / 0.25); margin: 18px 0 8px;
+    }
+    .progress__bar {
+      width: 45%; /* fix auf 45 % */
+      height: 100%; border-radius: inherit;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      box-shadow: inset 0 0 8px hsl(0 0% 100% / 0.25);
+    }
+
+    .status-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--muted); }
+
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
+    .btn {
+      appearance: none; border: 0; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 16px; border-radius: 12px; font-weight: 600; letter-spacing: .25px;
+      background: linear-gradient(180deg, hsl(0 0% 100% / 0.45), hsl(0 0% 100% / 0.25)); color: var(--fg);
+      box-shadow: var(--shadow); transition: transform .15s ease, filter .15s ease, opacity .15s ease;
+    }
+    .btn:hover { transform: translateY(-1px); }
+    .btn:active { transform: translateY(0); filter: brightness(0.98); }
+    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    .btn--primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; text-shadow: 0 1px 2px hsl(0 0% 0% / 0.2); }
+
+    footer {
+      max-width: var(--maxw); margin: 40px auto 28px;
+      padding: 0 clamp(16px, 3vw, 28px); color: var(--muted); font-size: 13px;
+      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
+    }
+    .links a { color: var(--muted); text-decoration: none; margin-right: 14px; }
+    .links a:hover { text-decoration: underline; }
+    @media (max-width: 480px) { .top-links a { padding: 8px 12px; } .brand__logo { height: 32px; width: 120px; } }
+  </style>
+</head>
+<body>
+  <div class="site-shell">
+    <header aria-label="Kopfzeile">
+      <a class="brand" href="#" aria-label="Logo-Link">
+        <img src="assets/logos/favicon.svg" alt="Logo" class="brand__logo">
+      </a>
+      <nav class="top-links" aria-label="Obere Navigation">
+        <a href="impressum.html" rel="nofollow">Impressum</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="card" role="status" aria-live="polite">
+        <div class="status-chip" aria-label="Status: Wartungsarbeiten">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span>Geplante Wartungsarbeiten</span>
+        </div>
+
+        <h1>Wir sind gleich wieder da.</h1>
+        <p class="lead">
+          Unsere Systeme werden aktuell gewartet, um Leistung, Sicherheit und Stabilität zu erhöhen.
+          Währenddessen ist die Website vorübergehend nicht erreichbar.
+        </p>
+
+        <div class="progress" aria-hidden="true">
+          <div class="progress__bar"></div>
+        </div>
+        <div class="status-line" aria-hidden="true">
+          <span>Fortschritt (geschätzt)</span>
+          <span id="pct">~45&nbsp;%</span>
+        </div>
+
+        <div class="cta-row">
+          <a class="btn btn--primary" href="mailto:office@kromp.international" aria-label="E-Mail an den Support senden">
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/>
+            </svg>
+            office@kromp.international
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="meta">
+        © <span>2025</span>–<span id="y"></span> Kromp International. Alle Rechte vorbehalten.
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Progressive Enhancement
+    document.documentElement.classList.remove('no-js');
+
+    // Jahr-Spanne: Startjahr fix (2025), Endjahr = aktuelles Jahr
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Fortschrittsbalken bleibt statisch bei 45 %
+  </script>
+</body>
+</html>

@@ -1,188 +1,368 @@
 <!doctype html>
-<html lang="de" class="no-js">
+<html lang="de-AT" class="h-full scroll-smooth">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="robots" content="noindex,nofollow" />
-  <meta name="color-scheme" content="light" />
-  <title>Wartungsarbeiten – Wir sind gleich zurück</title>
-  <meta name="description" content="Diese Website wird derzeit gewartet. Wir sind in Kürze wieder für Sie da." />
-  <link rel="icon" href="favicon.ico" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kromp International – Veranstaltungstechnik in Wien</title>
+  <meta name="description" content="Kromp International (Kromp e.U.) – Professionelle Veranstaltungstechnik aus Wien: Planung, Licht, Ton, Bühne.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
+  <!-- SEO / OG / Twitter -->
+  <link rel="canonical" href="https://www.kromp.international/">
+  <link rel="alternate" hreflang="de-AT" href="https://www.kromp.international/">
+  <link rel="alternate" hreflang="en"    href="https://www.kromp.international/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.kromp.international/">
+  <meta property="og:title" content="Kromp International – Veranstaltungstechnik">
+  <meta property="og:description" content="Professionelle Veranstaltungstechnik aus Wien: Planung, Licht, Ton, Bühne.">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.kromp.international/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kromp International – Veranstaltungstechnik">
+  <meta name="twitter:description" content="Planung, Licht, Ton, Bühne.">
+  <meta name="twitter:image" content="/assets/og-image.jpg">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": [
+      "Organization",
+      "ProfessionalService"
+    ],
+    "name": "Kromp International",
+    "legalName": "Kromp e.U.",
+    "url": "https://www.kromp.international/",
+    "logo": "https://www.kromp.international/assets/favicon.svg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hetzendorfer Straße 93 / 8 / 1",
+      "postalCode": "1120",
+      "addressLocality": "Wien",
+      "addressCountry": "AT"
+    },
+    "email": "office@kromp.international",
+    "telephone": "+43 650 5784356",
+    "sameAs": [
+      "https://www.instagram.com/kromp_international",
+      "https://www.linkedin.com/company/kromp-international/"
+    ],
+    "availableLanguage": [
+      "de-AT",
+      "en"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+43 650 5784356",
+        "contactType": "customer service",
+        "areaServed": "AT",
+        "availableLanguage": [
+          "de-AT",
+          "en"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CDN (später gern Build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'}
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preload" as="image" href="assets/hero.jpg">
   <style>
-    /* ========= RESET & TOKENS ========= */
-    *, *::before, *::after { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-                   Inter, "Noto Sans", Arial, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-      line-height: 1.5;
-      color: var(--fg);
-      background:
-        radial-gradient(1200px 800px at 80% -10%, hsl(220 80% 50% / 0.12), transparent 60%),
-        radial-gradient(900px 600px at 10% 110%, hsl(220 70% 35% / 0.12), transparent 55%),
-        linear-gradient(180deg, var(--bg), var(--bg-deep));
-      -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
-    }
-    :root {
-      --bg: hsl(0 0% 100%);
-      --bg-elev: hsl(0 0% 100% / 0.7);
-      --bg-deep: hsl(210 20% 98%);
-      --glass: hsl(0 0% 100% / 0.6);
-      --fg: hsl(220 20% 15%);
-      --muted: hsl(220 8% 45%);
-      --accent: hsl(220 90% 48%);   /* Blau */
-      --accent-2: hsl(230 80% 38%); /* Tiefblau */
-      --shadow: 0 10px 30px hsl(220 40% 20% / 0.10), 0 2px 8px hsl(220 40% 20% / 0.06);
-      --radius-lg: 18px; --radius-sm: 10px; --maxw: 1080px; --blur: saturate(140%) blur(12px);
-      --warn1: hsl(45 100% 64% / 0.25); --warn2: hsl(45 100% 52% / 0.20);
-      --border: hsl(0 0% 100% / 0.22);
-    }
+    /* Partner-Logo-Marquee (barrierearm) */
+    .marquee { display:flex; overflow:hidden; mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
+    .marquee__track { display:flex; gap:3rem; animation: marquee 30s linear infinite; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
 
-    /* ========= LAYOUT ========= */
-    .site-shell { min-height: 100%; display: grid; grid-template-rows: auto 1fr auto; }
-    header {
-      position: relative; z-index: 2; max-width: var(--maxw);
-      margin: 0 auto; padding: 20px clamp(16px, 3vw, 28px);
-      display: flex; align-items: center; justify-content: space-between;
-    }
-
-    .brand { display: inline-flex; align-items: center; text-decoration: none; }
-    .brand__logo {
-      width: 140px; height: 40px; object-fit: contain; display: block;
-    }
-
-    .top-links a {
-      color: var(--fg); text-decoration: none; font-weight: 500;
-      border: 1px solid hsl(0 0% 100% / 0.0); padding: 10px 14px; border-radius: 999px;
-      backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
-      background: var(--glass); box-shadow: var(--shadow);
-      transition: transform .2s ease, background .2s ease, border-color .2s ease;
-    }
-    .top-links a:hover { transform: translateY(-1px); border-color: hsl(0 0% 100% / 0.15); }
-    .top-links a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-
-    main { display: grid; place-items: center; padding: clamp(24px, 4vw, 48px); }
-    .card {
-      position: relative; max-width: 760px; width: 100%;
-      border-radius: var(--radius-lg); padding: clamp(28px, 5vw, 44px);
-      backdrop-filter: var(--blur); -webkit-backdrop-filter: var(--blur);
-      background: linear-gradient(180deg, var(--bg-elev), transparent 70%) border-box,
-                  radial-gradient(650px 200px at 80% -20%, hsl(0 0% 100% / 0.35), transparent 70%) border-box;
-      border: 1px solid var(--border); box-shadow: var(--shadow);
-    }
-
-    .status-chip {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 8px 14px; border-radius: 999px; font-size: 14px; font-weight: 600; letter-spacing: .2px;
-      background: linear-gradient(180deg, var(--warn1), var(--warn2));
-      border: 1px solid hsl(45 100% 60% / 0.45);
-      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
-    }
-    .status-dot {
-      width: 10px; height: 10px; border-radius: 50%;
-      background: linear-gradient(180deg, #ffd86b, #f7b733);
-      box-shadow: 0 0 0 6px hsl(45 100% 50% / 0.15);
-    }
-    
-    h1 { margin: 14px 0 10px; font-size: clamp(28px, 4vw, 44px); line-height: 1.1; letter-spacing: -0.02em; }
-    .lead { font-size: clamp(16px, 2.2vw, 18px); color: var(--muted); margin-bottom: 22px; }
-
-    /* Fortschrittsbalken statisch */
-    .progress {
-      position: relative; width: 100%; height: 12px; border-radius: 999px; overflow: hidden;
-      background: linear-gradient(180deg, hsl(0 0% 100% / 0.35), hsl(0 0% 100% / 0.15));
-      border: 1px solid hsl(0 0% 100% / 0.25); margin: 18px 0 8px;
-    }
-    .progress__bar {
-      width: 45%; /* fix auf 45 % */
-      height: 100%; border-radius: inherit;
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      box-shadow: inset 0 0 8px hsl(0 0% 100% / 0.25);
-    }
-
-    .status-line { display: flex; align-items: center; justify-content: space-between; gap: 16px; font-size: 14px; color: var(--muted); }
-
-    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-    .btn {
-      appearance: none; border: 0; text-decoration: none; display: inline-flex; align-items: center; gap: 10px;
-      padding: 12px 16px; border-radius: 12px; font-weight: 600; letter-spacing: .25px;
-      background: linear-gradient(180deg, hsl(0 0% 100% / 0.45), hsl(0 0% 100% / 0.25)); color: var(--fg);
-      box-shadow: var(--shadow); transition: transform .15s ease, filter .15s ease, opacity .15s ease;
-    }
-    .btn:hover { transform: translateY(-1px); }
-    .btn:active { transform: translateY(0); filter: brightness(0.98); }
-    .btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
-    .btn--primary { background: linear-gradient(90deg, var(--accent), var(--accent-2)); color: #fff; text-shadow: 0 1px 2px hsl(0 0% 0% / 0.2); }
-
-    footer {
-      max-width: var(--maxw); margin: 40px auto 28px;
-      padding: 0 clamp(16px, 3vw, 28px); color: var(--muted); font-size: 13px;
-      display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap;
-    }
-    .links a { color: var(--muted); text-decoration: none; margin-right: 14px; }
-    .links a:hover { text-decoration: underline; }
-    @media (max-width: 480px) { .top-links a { padding: 8px 12px; } .brand__logo { height: 32px; width: 120px; } }
+    /* Einheitliche Logo-Höhe für Partnerlogos */
+    .partner-logo { height: 40px; width: auto; object-fit: contain; image-rendering: auto; }
+    @media (min-width: 1024px) { .partner-logo { height: 44px; } }
   </style>
 </head>
-<body>
-  <div class="site-shell">
-    <header aria-label="Kopfzeile">
-      <a class="brand" href="#" aria-label="Logo-Link">
-        <img src="assets/logos/favicon.svg" alt="Logo" class="brand__logo">
+<body class="h-full bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100">
+  <!-- Skip-Link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white text-slate-900 rounded px-3 py-2 shadow">Zum Inhalt springen</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-950/60 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/" class="flex items-center gap-3">
+        <img src="assets/logos/favicon.svg" alt="Logo" class="h-12 md:h-16">
+        <!--<span class="font-semibold tracking-tight">Kromp International</span>-->
       </a>
-      <nav class="top-links" aria-label="Obere Navigation">
-        <a href="impressum.html" rel="nofollow">Impressum</a>
+      <nav aria-label="Hauptnavigation" class="hidden md:flex items-center gap-8">
+        <a href="#ueber-uns" class="hover:text-brand-600">Über uns</a>
+        <a href="#leistungen" class="hover:text-brand-600" aria-current="page">Leistungen</a>
+        <a href="#projekte" class="hover:text-brand-600">Projekte</a>
+        <a href="#partner" class="hover:text-brand-600">Partner</a>
+        <a href="#kontakt" class="hover:text-brand-600">Kontakt</a>
       </nav>
-    </header>
-
-    <main>
-      <section class="card" role="status" aria-live="polite">
-        <div class="status-chip" aria-label="Status: Wartungsarbeiten">
-          <span class="status-dot" aria-hidden="true"></span>
-          <span>Geplante Wartungsarbeiten</span>
-        </div>
-
-        <h1>Wir sind gleich wieder da.</h1>
-        <p class="lead">
-          Unsere Systeme werden aktuell gewartet, um Leistung, Sicherheit und Stabilität zu erhöhen.
-          Währenddessen ist die Website vorübergehend nicht erreichbar.
-        </p>
-
-        <div class="progress" aria-hidden="true">
-          <div class="progress__bar"></div>
-        </div>
-        <div class="status-line" aria-hidden="true">
-          <span>Fortschritt (geschätzt)</span>
-          <span id="pct">~45&nbsp;%</span>
-        </div>
-
-        <div class="cta-row">
-          <a class="btn btn--primary" href="mailto:office@kromp.international" aria-label="E-Mail an den Support senden">
-            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5Z"/>
-            </svg>
-            office@kromp.international
-          </a>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <div class="meta">
-        © <span>2025</span>–<span id="y"></span> Kromp International. Alle Rechte vorbehalten.
+      <div class="flex items-center gap-2">
+        <a href="/en/" class="px-3 py-1.5 rounded-md text-sm border border-slate-300/60 dark:border-slate-700/70 hover:bg-slate-100 dark:hover:bg-slate-900" lang="en" hreflang="en">
+          <span aria-hidden="true">EN</span>
+          <span class="sr-only">Seite auf Englisch anzeigen</span>
+        </a>        
+        <a href="/impressum.html" class="px-3 py-1.5 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-900">Impressum</a>
       </div>
-    </footer>
-  </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-slate-900 to-slate-900 -z-10"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-32">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">Veranstaltungstechnik, die begeistert.</h1>
+        <p class="mt-5 text-lg text-slate-200">Kromp International liefert Planung, Licht, Ton und Bühne – zuverlässig, präzise und auf den Punkt.</p>
+        <div class="mt-8 flex gap-4">
+          <a href="#kontakt" class="inline-flex items-center rounded-lg bg-brand-600 px-5 py-3 font-medium text-white hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400">Anfragen</a>
+          <a href="#leistungen" class="inline-flex items-center rounded-lg border border-slate-600/50 px-5 py-3 font-medium text-white/90 hover:bg-white/10">Leistungen</a>
+        </div>
+      </div>
+    </div>
+    <!--<img src="assets/hero.jpg" alt="Licht- und Tonregie bei einem Live-Event" class="absolute right-0 bottom-0 w-[48rem] max-w-none hidden md:block opacity-70 select-none pointer-events-none">-->
+  </section>
+
+  <main id="main">
+    <!-- Über uns -->
+    <section id="ueber-uns" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <header class="mb-6">
+        <h2 class="text-3xl font-bold tracking-tight">Über uns</h2>
+      </header>
+      <div>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Kromp International ist ein österreichisches Unternehmen, das sich auf Veranstaltungs- und Medientechnik, Broadcast Engineering sowie die technische Gesamtplanung komplexer Projekte spezialisiert hat. Das Unternehmen entwickelt, plant und realisiert hochwertige Lösungen für Events, Medienproduktionen, Unternehmen und öffentliche Institutionen.</p>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">Zu den Kernbereichen gehören die komplette technische Umsetzung von Veranstaltungen, professionelle Audio-, Video- und Lichtsysteme, Broadcast- und Streamingtechnik, Netzwerkinfrastruktur für Events sowie die Erstellung umfassender technischer Konzepte als Generalplaner im Veranstaltungs- und Medienbereich.</p>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">Kromp International arbeitet mit internationalen Partnern, Rundfunkanstalten und zahlreichen lokalen Betrieben zusammen und betreut Projekte jeder Größenordnung – von Live-Events über Sportübertragungen bis hin zu komplexen technischen Sonderinstallationen. Durch präzise Planung, moderne Technik und hohe Zuverlässigkeit bietet Kromp International Lösungen aus einer Hand und setzt Maßstäbe in Qualität und Innovationskraft.</p>
+      </div>
+    </section>
+
+    <!-- Leistungen -->
+    <section id="leistungen" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <header class="mb-10">
+        <h2 class="text-3xl font-bold tracking-tight">Leistungen</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Von der Planung bis zum Show-Tag – modular buchbar.</p>
+      </header>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Planung & Projektleitung</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Machbarkeitsanalyse, CAD-Plots, Timelines, Sicherheits- und Stromkonzepte.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Lichttechnik</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Design, Programmierung, Rigging – modernste Fixtures & Steuerungen.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Tontechnik</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Beschallung, Recording, Monitoring – von Konferenz bis Festival.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Bühne & Infrastruktur</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Podeste, Trussing, Strom, Lastverteilung, Backline-Koordination.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">On-Site Betrieb</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Crew, Aufbau, Show-Calling, Abbau – zuverlässig & sicher.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Vermittlung & Partner</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Ausgewählte Partnerfirmen für Spezialgewerke – nahtlos integriert.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projekte -->
+    <section id="projekte" class="bg-slate-50 dark:bg-slate-900/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <header class="mb-8">
+          <h2 class="text-3xl font-bold tracking-tight">Ausgewählte Projekte</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">
+            Bilder &amp; Cases folgen – Platzhalter.
+          </p>
+        </header>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Projekt 1 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="assets/img/1.png"
+              alt="Projekt 1"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Projekt 2 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="assets/img/2.png"
+              alt="Projekt 2"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Projekt 3 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="assets/img/3.png"
+              alt="Projekt 3"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Projekt 4 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="assets/img/4.png"
+              alt="Projekt 4"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Projekt 5 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="assets/img/5.png"
+              alt="Projekt 5"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Projekt 6 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="assets/img/6.png"
+              alt="Projekt 6"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner -->
+    <section id="partner" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <header class="mb-8 flex items-end justify-between">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight">Partnerfirmen und Kunden</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">In guter Gesellschaft – unsere langjährigen Partner.</p>
+        </div>
+        <div class="text-sm text-slate-500">Hover pausiert • Barrierearm</div>
+      </header>
+      <div class="marquee rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 shadow-sm" role="region" aria-label="Partnerlogos (laufendes Band)">
+        <div class="marquee__track hover:[animation-play-state:paused]">
+          <div class="flex items-center gap-12 pr-12">
+        <img src="assets/logos/partner/WKO.png"             alt="WKO – Wirtschaftskammer Österreich" class="partner-logo" loading="lazy">
+        <img src="assets/logos/partner/VSVL.png"            alt="VSVL"                                class="partner-logo" loading="lazy">
+        <img src="assets/logos/partner/SMG.png"             alt="SMG"                                 class="partner-logo" loading="lazy">
+        <img src="assets/logos/partner/RTS.jpg"             alt="RTS"                                 class="partner-logo" loading="lazy">
+        <img src="assets/logos/partner/PPOE.png"            alt="PPOE"                                class="partner-logo" loading="lazy">
+        <img src="assets/logos/partner/teatro.png"          alt="teatro"                              class="partner-logo" loading="lazy">
+        <img src="assets/logos/partner/AV_Pro.png"          alt="AV Pro"                              class="partner-logo" loading="lazy">
+        <img src="assets/logos/partner/Habegger_nobg.png"   alt="Habegger"                            class="partner-logo" loading="lazy">
+        <img src="assets/logos/partner/anno93_nobg.png"     alt="anno93"                              class="partner-logo" loading="lazy">
+
+        <!-- Duplizierte Reihe für nahtlosen Loop -->
+        <img src="assets/logos/partner/WKO.png"             alt="WKO – Wirtschaftskammer Österreich" class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/partner/VSVL.png"            alt="VSVL"                                class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/partner/SMG.png"             alt="SMG"                                 class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/partner/RTS.jpg"             alt="RTS"                                 class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/partner/PPOE.png"            alt="PPOE"                                class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/partner/teatro.png"          alt="teatro"                              class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/partner/AV_Pro.png"          alt="AV Pro"                              class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/partner/Habegger_nobg.png"   alt="Habegger"                            class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="assets/logos/partner/anno93_nobg.png"     alt="anno93"                              class="partner-logo" loading="lazy" aria-hidden="true">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt -->
+    <section id="kontakt" class="bg-slate-50 dark:bg-slate-900/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold tracking-tight">Kontakt</h2>
+        </header>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+            <p class="text-sm text-slate-600 dark:text-slate-300">Office</p>
+            <h3 class="mt-1 font-semibold">Kromp International - Kromp e.U.</h3>
+            <p class="mt-2">Hetzendorfer Straße 93 / 8 / 1<br>1120 Wien, Österreich</p>
+            <p class="mt-2">E-Mail: <a class="text-brand-600 hover:underline" href="mailto:office@kromp.international">office@kromp.international</a></p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+            <p class="text-sm text-slate-600 dark:text-slate-300">Geschäftsführung</p>
+            <p>Nicolas Friedrich Kromp<br>Telefon: <a class="text-brand-600 hover:underline" href="tel:+436505784356">+43 650 5784356</a><br>
+            E-Mail: <a class="text-brand-600 hover:underline" href="mailto:nicolas.kromp@kromp.international">nicolas.kromp@kromp.international</a></p>
+            <div class="mt-4 flex gap-3">
+              <a aria-label="Instagram" href="https://www.instagram.com/kromp_international" class="text-slate-600 hover:text-brand-600" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/company/kromp-international/" class="text-slate-600 hover:text-brand-600" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      <!--  <p class="mt-6 text-xs text-slate-500">Kein Kontaktformular – Kontakt via E-Mail (mailto) gewünscht.</p>-->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-slate-600 dark:text-slate-300 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+      <p>© <span id="y"></span> Kromp International - Kromp e.U.</p>
+      <nav class="flex gap-6" aria-label="Footer">
+        <a href="/impressum.html" class="hover:text-brand-600">Impressum</a>
+        <a href="/datenschutz.html" class="hover:text-brand-600">Datenschutz</a>
+        <a href="assets/doc/AGB.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-brand-600">AGB</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Back-to-Top Button -->
+  <button id="toTop"
+    class="fixed bottom-6 right-6 hidden rounded-full p-3 shadow-lg bg-brand-600 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+    aria-label="Nach oben scrollen" title="Nach oben">
+    ↑
+  </button>
 
   <script>
-    // Progressive Enhancement
-    document.documentElement.classList.remove('no-js');
-
-    // Jahr-Spanne: Startjahr fix (2025), Endjahr = aktuelles Jahr
+    // Jahr im Footer
     document.getElementById('y').textContent = new Date().getFullYear();
 
-    // Fortschrittsbalken bleibt statisch bei 45 %
+    // Back-to-top Button
+    const btn = document.getElementById('toTop');
+    const showAfter = 400; // px
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > showAfter) btn.classList.remove('hidden');
+      else btn.classList.add('hidden');
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
   </script>
 </body>
 </html>

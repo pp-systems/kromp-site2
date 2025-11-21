@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kromp International – Event Technology in Vienna</title>
+  <meta name="description" content="Kromp International (Kromp e.U.) – Professional event technology from Vienna: planning, lighting, audio, stage.">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+
+  <!-- SEO / OG / Twitter -->
+  <link rel="canonical" href="https://www.kromp.international/en/">
+  <link rel="alternate" hreflang="de-AT" href="https://www.kromp.international/">
+  <link rel="alternate" hreflang="en"    href="https://www.kromp.international/en/">
+  <link rel="alternate" hreflang="x-default" href="https://www.kromp.international/">
+  <meta property="og:title" content="Kromp International – Event Technology">
+  <meta property="og:description" content="Professional event technology from Vienna: planning, lighting, audio, stage.">
+  <meta property="og:image" content="../assets/og-image.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.kromp.international/en/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Kromp International – Event Technology">
+  <meta name="twitter:description" content="Planning, lighting, audio, stage.">
+  <meta name="twitter:image" content="/assets/og-image.jpg">
+  <meta name="theme-color" content="#0f172a">
+
+  <!-- Organization JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": [
+      "Organization",
+      "ProfessionalService"
+    ],
+    "name": "Kromp International",
+    "legalName": "Kromp e.U.",
+    "url": "https://www.kromp.international/en/",
+    "logo": "https://www.kromp.international/assets/favicon.svg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hetzendorfer Straße 93 / 8 / 1",
+      "postalCode": "1120",
+      "addressLocality": "Vienna",
+      "addressCountry": "AT"
+    },
+    "email": "office@kromp.international",
+    "telephone": "+43 650 5784356",
+    "sameAs": [
+      "https://www.instagram.com/kromp_international",
+      "https://www.linkedin.com/company/kromp-international/"
+    ],
+    "availableLanguage": [
+      "de-AT",
+      "en"
+    ],
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+43 650 5784356",
+        "contactType": "customer service",
+        "areaServed": "AT",
+        "availableLanguage": [
+          "de-AT",
+          "en"
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <!-- Tailwind CDN (later preferably build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {50:'#eef2ff',100:'#e0e7ff',200:'#c7d2fe',300:'#a5b4fc',400:'#818cf8',500:'#6366f1',600:'#4f46e5',700:'#4338ca',800:'#3730a3',900:'#312e81',950:'#1e1b4b'}
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preload" as="image" href="../assets/hero.jpg">
+  <style>
+    /* Partner logo marquee (accessible) */
+    .marquee { display:flex; overflow:hidden; mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent); }
+    .marquee__track { display:flex; gap:3rem; animation: marquee 30s linear infinite; }
+    @keyframes marquee { to { transform: translateX(-50%); } }
+    @media (prefers-reduced-motion: reduce) { .marquee__track { animation: none; } }
+
+    /* Unified logo height for partner logos */
+    .partner-logo { height: 40px; width: auto; object-fit: contain; image-rendering: auto; }
+    @media (min-width: 1024px) { .partner-logo { height: 44px; } }
+  </style>
+</head>
+<body class="h-full bg-white text-slate-800 antialiased dark:bg-slate-950 dark:text-slate-100">
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 bg-white text-slate-900 rounded px-3 py-2 shadow">Skip to content</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 backdrop-blur bg-white/70 dark:bg-slate-950/60 border-b border-slate-200/60 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <a href="/en/" class="flex items-center gap-3">
+        <img src="../assets/logos/favicon.svg" alt="Logo" class="h-12 md:h-16">
+        <!--<span class="font-semibold tracking-tight">Kromp International</span>-->
+      </a>
+      <nav aria-label="Main navigation" class="hidden md:flex items-center gap-8">
+        <a href="#ueber-uns" class="hover:text-brand-600">About us</a>
+        <a href="#leistungen" class="hover:text-brand-600" aria-current="page">Services</a>
+        <a href="#projekte" class="hover:text-brand-600">Projects</a>
+        <a href="#partner" class="hover:text-brand-600">Partners</a>
+        <a href="#kontakt" class="hover:text-brand-600">Contact</a>
+      </nav>
+      <div class="flex items-center gap-2">
+        <a href="/" class="px-3 py-1.5 rounded-md text-sm border border-slate-300/60 dark:border-slate-700/70 hover:bg-slate-100 dark:hover:bg-slate-900" lang="de-AT" hreflang="de-AT">
+          <span aria-hidden="true">DE</span>
+          <span class="sr-only">Show page in German</span>
+        </a>
+        <a href="/en/imprint.html" class="px-3 py-1.5 rounded-md text-sm hover:bg-slate-100 dark:hover:bg-slate-900">Imprint</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-brand-950 via-slate-900 to-slate-900 -z-10"></div>
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-24 sm:py-28 lg:py-32">
+      <div class="max-w-2xl">
+        <h1 class="text-4xl sm:text-5xl font-extrabold tracking-tight text-white">Event technology that inspires.</h1>
+        <p class="mt-5 text-lg text-slate-200">Kromp International provides planning, lighting, audio and staging – reliable, precise and on point.</p>
+        <div class="mt-8 flex gap-4">
+          <a href="#kontakt" class="inline-flex items-center rounded-lg bg-brand-600 px-5 py-3 font-medium text-white hover:bg-brand-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-400">Request a quote</a>
+          <a href="#leistungen" class="inline-flex items-center rounded-lg border border-slate-600/50 px-5 py-3 font-medium text-white/90 hover:bg-white/10">Services</a>
+        </div>
+      </div>
+    </div>
+    <!--<img src="../assets/hero.jpg" alt="Lighting and audio control at a live event" class="absolute right-0 bottom-0 w-[48rem] max-w-none hidden md:block opacity-70 select-none pointer-events-none">-->
+  </section>
+
+  <main id="main">
+    <!-- About us -->
+    <section id="ueber-uns" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <header class="mb-6">
+        <h2 class="text-3xl font-bold tracking-tight">About us</h2>
+      </header>
+      <div>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">Kromp International is an Austrian company specialising in event and media technology, broadcast engineering and the overall technical planning of complex projects. The company develops, plans and implements high-quality solutions for events, media productions, corporate clients and public institutions.</p>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">Core areas include complete technical realisation of events, professional audio, video and lighting systems, broadcast and streaming technology, network infrastructure for events as well as the creation of comprehensive technical concepts as a general planner in the event and media sector.</p>
+        <p class="mt-4 text-slate-600 dark:text-slate-300">Kromp International works with international partners, broadcasters and numerous local companies and manages projects of all sizes – from live events and sports broadcasts to complex technical special installations. With precise planning, modern technology and high reliability, Kromp International offers turnkey solutions and sets standards in quality and innovation.</p>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section id="leistungen" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
+      <header class="mb-10">
+        <h2 class="text-3xl font-bold tracking-tight">Services</h2>
+        <p class="mt-2 text-slate-600 dark:text-slate-300">From planning to show day – available as modular services.</p>
+      </header>
+      <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Planning &amp; project management</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Feasibility analysis, CAD plots, timelines, safety and power concepts.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Lighting technology</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Design, programming, rigging – state-of-the-art fixtures and control systems.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Audio technology</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Sound reinforcement, recording, monitoring – from conferences to festivals.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Stage &amp; infrastructure</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Platforms, trussing, power, load distribution, backline coordination.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">On-site operations</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Crew, set-up, show calling, dismantling – reliable and safe.</p>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6 hover:shadow">
+          <h3 class="font-semibold text-lg">Mediation &amp; partners</h3>
+          <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">Selected partner companies for specialised trades – seamlessly integrated.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projekte" class="bg-slate-50 dark:bg-slate-900/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <header class="mb-8">
+          <h2 class="text-3xl font-bold tracking-tight">Selected projects</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">
+            Images &amp; case studies coming soon – placeholder.
+          </p>
+        </header>
+
+        <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <!-- Project 1 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="../assets/img/1.png"
+              alt="Project 1"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Project 2 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="../assets/img/2.png"
+              alt="Project 2"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Project 3 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="../assets/img/3.png"
+              alt="Project 3"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Project 4 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="../assets/img/4.png"
+              alt="Project 4"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Project 5 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="../assets/img/5.png"
+              alt="Project 5"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+          <!-- Project 6 -->
+          <figure class="aspect-[4/3] overflow-hidden rounded-xl bg-slate-200 dark:bg-slate-800">
+            <img
+              src="../assets/img/6.png"
+              alt="Project 6"
+              class="h-full w-full object-cover object-center"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partners -->
+    <section id="partner" class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+      <header class="mb-8 flex items-end justify-between">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight">Partner companies and clients</h2>
+          <p class="mt-2 text-slate-600 dark:text-slate-300">In good company – our long-standing partners.</p>
+        </div>
+        <div class="text-sm text-slate-500">Hover pauses • Accessible</div>
+      </header>
+      <div class="marquee rounded-2xl border border-slate-200 dark:border-slate-800 p-6 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900 shadow-sm" role="region" aria-label="Partner logos (scrolling strip)">
+        <div class="marquee__track hover:[animation-play-state:paused]">
+          <div class="flex items-center gap-12 pr-12">
+        <img src="../assets/logos/partner/WKO.png"             alt="WKO – Austrian Federal Economic Chamber" class="partner-logo" loading="lazy">
+        <img src="../assets/logos/partner/VSVL.png"            alt="VSVL"                                    class="partner-logo" loading="lazy">
+        <img src="../assets/logos/partner/SMG.png"             alt="SMG"                                     class="partner-logo" loading="lazy">
+        <img src="../assets/logos/partner/RTS.jpg"             alt="RTS"                                     class="partner-logo" loading="lazy">
+        <img src="../assets/logos/partner/PPOE.png"            alt="PPOE"                                    class="partner-logo" loading="lazy">
+        <img src="../assets/logos/partner/teatro.png"          alt="teatro"                                  class="partner-logo" loading="lazy">
+        <img src="../assets/logos/partner/AV_Pro.png"          alt="AV Pro"                                  class="partner-logo" loading="lazy">
+        <img src="../assets/logos/partner/Habegger_nobg.png"   alt="Habegger"                                class="partner-logo" loading="lazy">
+        <img src="../assets/logos/partner/anno93_nobg.png"     alt="anno93"                                  class="partner-logo" loading="lazy">
+
+        <!-- Duplicated row for seamless loop -->
+        <img src="../assets/logos/partner/WKO.png"             alt="WKO – Austrian Federal Economic Chamber" class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="../assets/logos/partner/VSVL.png"            alt="VSVL"                                    class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="../assets/logos/partner/SMG.png"             alt="SMG"                                     class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="../assets/logos/partner/RTS.jpg"             alt="RTS"                                     class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="../assets/logos/partner/PPOE.png"            alt="PPOE"                                    class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="../assets/logos/partner/teatro.png"          alt="teatro"                                  class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="../assets/logos/partner/AV_Pro.png"          alt="AV Pro"                                  class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="../assets/logos/partner/Habegger_nobg.png"   alt="Habegger"                                class="partner-logo" loading="lazy" aria-hidden="true">
+        <img src="../assets/logos/partner/anno93_nobg.png"     alt="anno93"                                  class="partner-logo" loading="lazy" aria-hidden="true">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="kontakt" class="bg-slate-50 dark:bg-slate-900/50">
+      <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16">
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold tracking-tight">Contact</h2>
+        </header>
+        <div class="grid gap-6 sm:grid-cols-2">
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+            <p class="text-sm text-slate-600 dark:text-slate-300">Office</p>
+            <h3 class="mt-1 font-semibold">Kromp International - Kromp e.U.</h3>
+            <p class="mt-2">Hetzendorfer Straße 93 / 8 / 1<br>1120 Vienna, Austria</p>
+            <p class="mt-2">Email: <a class="text-brand-600 hover:underline" href="mailto:office@kromp.international">office@kromp.international</a></p>
+          </div>
+          <div class="rounded-2xl border border-slate-200 dark:border-slate-800 p-6">
+            <p class="text-sm text-slate-600 dark:text-slate-300">Management</p>
+            <p>Nicolas Friedrich Kromp<br>Phone: <a class="text-brand-600 hover:underline" href="tel:+436505784356">+43 650 5784356</a><br>
+            Email: <a class="text-brand-600 hover:underline" href="mailto:nicolas.kromp@kromp.international">nicolas.kromp@kromp.international</a></p>
+            <div class="mt-4 flex gap-3">
+              <a aria-label="Instagram" href="https://www.instagram.com/kromp_international" class="text-slate-600 hover:text-brand-600" target="_blank" rel="noopener noreferrer">Instagram</a>
+              <a aria-label="LinkedIn" href="https://www.linkedin.com/company/kromp-international/" class="text-slate-600 hover:text-brand-600" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+          </div>
+        </div>
+      <!--  <p class="mt-6 text-xs text-slate-500">No contact form – contact via email (mailto) preferred.</p>-->
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 dark:border-slate-800">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-10 text-sm text-slate-600 dark:text-slate-300 flex flex-col sm:flex-row gap-4 sm:items-center sm:justify-between">
+      <p>© <span id="y"></span> Kromp International - Kromp e.U.</p>
+      <nav class="flex gap-6" aria-label="Footer">
+        <a href="/en/imprint.html" class="hover:text-brand-600">Imprint</a>
+        <a href="/en/privacy.html" class="hover:text-brand-600">Privacy policy</a>
+        <a href="../assets/doc/AGB.pdf" target="_blank" rel="noopener noreferrer" class="hover:text-brand-600">Terms &amp; Conditions (AGB)</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Back-to-Top Button -->
+  <button id="toTop"
+    class="fixed bottom-6 right-6 hidden rounded-full p-3 shadow-lg bg-brand-600 text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-white"
+    aria-label="Scroll back to top" title="Back to top">
+    ↑
+  </button>
+
+  <script>
+    // Year in footer
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // Back-to-top button
+    const btn = document.getElementById('toTop');
+    const showAfter = 400; // px
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > showAfter) btn.classList.remove('hidden');
+      else btn.classList.add('hidden');
+    });
+    btn.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
