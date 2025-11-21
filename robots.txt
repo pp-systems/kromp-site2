@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://www.kromp.international/sitemap.xml
